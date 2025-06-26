@@ -6,4 +6,3 @@ fs_permissions = [{ access = "read-write", path = "../circuits/target"},{ access
 ffi = true
 
 # See more config options https://github.com/foundry-rs/foundry/tree/master/config
-
