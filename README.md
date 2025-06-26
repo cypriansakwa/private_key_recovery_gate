@@ -2,7 +2,6 @@
 
 This project implements a simple **zero-knowledge circuit** that enforces a private key recovery condition using Noir and Barretenberg. A user can only generate a valid proof if they know a `secret_share` that satisfies a strict mathematical constraint.
 
----
 
  ## 🗂️ Project Structure
 
@@ -13,7 +12,7 @@ This project implements a simple **zero-knowledge circuit** that enforces a priv
 Tested with:
 - Noir `v1.0.0-beta.6`
 - `bb` CLI `v0.84.0`
----
+
 ## ✅ Example Inputs
 - `secret_share = 7`
 - `public_offset = 3`
