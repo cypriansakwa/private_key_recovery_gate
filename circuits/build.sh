@@ -1,0 +1,17 @@
+set -e
+
+echo "Compiling circuit..."
+if ! nargo compile; then
+    echo "Compilation failed. Exiting..."
+    exit 1
+fi
+
+echo "Generating vkey..."
+bb write_vk --oracle_hash keccak -b ./target/private_key_recovery_gate.json -o ./target
+
+echo "Generating solidity verifier..."
+bb write_solidity_verifier -k ./target/vk -o ../contract/Verifier.sol
+
+echo "Done"
+
+

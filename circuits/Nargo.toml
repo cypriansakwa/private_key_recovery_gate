@@ -1,0 +1,7 @@
+[package]
+name = "private_key_recovery_gate"
+type = "bin"
+authors = [""]
+
+[dependencies]
+
