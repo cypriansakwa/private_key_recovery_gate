@@ -1,38 +1,9 @@
-# 🔐 Private Key Recovery Gate (ZK Proof Circuit)
+# 🔐 Private Key Recovery Gate 
 
 This project implements a simple **zero-knowledge circuit** that enforces a private key recovery condition using Noir and Barretenberg. A user can only generate a valid proof if they know a `secret_share` that satisfies a strict mathematical constraint.
 
 ---
 
-## 📦 Circuit Summary
-
-```rust
- ─────────────────────────────────────────────────────────────
- 📦 Private Key Recovery Gate Circuit
- -------------------------------------------------------------
- A user can only recover a locked key or asset if they know
- a valid private recovery share (secret_share) such that:
-
-    2 * secret_share + public_offset = 17
-
- This ensures the secret share is valid and satisfies the
- recovery policy. The verifier only accepts valid proofs.
-
- Inputs:
-   - secret_share: Field (private)     → user's recovery share
-   - public_offset: pub Field (public) → known adjustment value
-
- Output: No flag — proof succeeds if and only if the policy is met.
- ─────────────────────────────────────────────────────────────
- ```
- ## 🧠 Circuit Logic (src/main.nr)
- ```rust
- fn main(secret_share: Field, public_offset: pub Field) {
-    let recovery_score = secret_share * 2 + public_offset;
-    let recovery_threshold = 17;
-    assert(recovery_score == recovery_threshold);
-}
- ```
  ## 🗂️ Project Structure
 
 - `/circuits` — Contains the Noir circuit and logic.
