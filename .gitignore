@@ -1,0 +1,19 @@
+# Build artifacts
+target/
+out/
+cache/
+proofs/
+broadcast/
+circuits/target/
+
+# Sensitive files
+.env
+
+# Solidity Verifier (auto-generated)
+plonk_vk.sol
+
+# Node.js
+js/node_modules/
+
+# OS files
+.DS_Store
